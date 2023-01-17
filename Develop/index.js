@@ -68,6 +68,52 @@ const userAnswers = await inquirer
         teamData.push(userIntern);
 
     } else if (userAnswers.role === 'Engineer') {
-        
+        const engineerAw = await inquirer
+        .prompt([
+            {
+                type: 'input',
+                message:'What is your GitHub username?',
+                name:'gitHub',
+            },
+        ]);
+        const userEngineer = new Engineer(
+            userAnswers.name,
+            userAnswers.Id,
+            userAnswers.email,
+            engineerAw.Id,
+        );
+        teamData.push(userEngineer);
+    
+    } else if (userAnswers.role === 'Manager') {
+        const managerAw = await inquirer
+        .prompt([
+            {
+                type:'input',
+                message:'Whatr is your room number?',
+                name:'roomNumber',
+            },
+        ]);
+        const userManager = new Manager(
+            userAnswers.name,
+            userAnswers.Id,
+            userAnswers.role,
+        )
+        managerAw.push(userManager);
+       
     }
+};
+
+async function gen() {
+    await userPrompts()
+
+const finalAw = await inquirer
+    .prompt([
+        {
+            type:'list',
+            name:'addTeamMember',
+            choices:['And anothert team member', 'Generate Team'],
+        }
+    ]);
+
+    
 }
