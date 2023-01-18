@@ -1,27 +1,12 @@
 const inquirer = require('inquirer');
-const { writeFile } = require('fs').promises;
+const fs = require("fs");
+const generateHTML = require('./src/source.js')
 
 const teamData =[];
 
-const Manager = require('../lib/manager');
-const Intern = require('../lib/intern');
-const Engineer = require('../lib/engineer');
-
-
-`<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-  </head>
-  <body>
-  <header class="p-5 mb-4 header bg-light">
-  <div class="container">
-    <h1 class="display-4"> TEAM </h1>
-
-  </body>`
-
+const Manager = require('./lib/manager.js');
+const Intern = require('./lib/intern.js');
+const Engineer = require('./lib/engineer.js');
 
 const userPrompts = async () => {
 const userAnswers = await inquirer
@@ -52,7 +37,7 @@ const userAnswers = await inquirer
 
     if(userAnswers.role === "Intern") {
         const internAw = await inquirer
-        .prmpt([
+        .prompt([
             {
                 type: 'input',
                 message:'What school do you go to?',
@@ -80,7 +65,7 @@ const userAnswers = await inquirer
             userAnswers.name,
             userAnswers.Id,
             userAnswers.email,
-            engineerAw.Id,
+            engineerAw.github,
         );
         teamData.push(userEngineer);
     
@@ -89,16 +74,17 @@ const userAnswers = await inquirer
         .prompt([
             {
                 type:'input',
-                message:'Whatr is your room number?',
+                message:'What is your room number?',
                 name:'roomNumber',
             },
         ]);
         const userManager = new Manager(
             userAnswers.name,
             userAnswers.Id,
-            userAnswers.role,
+            userAnswers.email,
+            managerAw.roomNumber
         )
-        managerAw.push(userManager);
+        teamData.push(userManager);
        
     }
 };
@@ -111,9 +97,24 @@ const finalAw = await inquirer
         {
             type:'list',
             name:'addTeamMember',
-            choices:['And anothert team member', 'Generate Team'],
+            choices:['Add another team member', 'Generate Team'],
+            message: "Add another team member or generate team!"
         }
     ]);
 
+    if (finalAw.addTeamMember === 'Add another team member') {
+        return gen()
+    }
+
+    return teamCreate();
     
+}
+
+gen();
+
+function teamCreate () {
+    fs.writeFileSync(
+        './index.html',
+        generateHTML(teamData),
+    )
 }
