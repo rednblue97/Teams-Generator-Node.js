@@ -65,7 +65,7 @@ const userAnswers = await inquirer
             userAnswers.name,
             userAnswers.Id,
             userAnswers.email,
-            engineerAw.github,
+            engineerAw.gitHub,
         );
         teamData.push(userEngineer);
     
