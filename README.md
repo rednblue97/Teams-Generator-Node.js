@@ -20,7 +20,12 @@ The usuer will be able to use this application by downloading inquirer using nod
 
 ## Usage
 This application is used to auto generate a team, with html and javascript. A video will be below showing functionality.
-https://drive.google.com/file/d/1EL-0Z33Hp01XtFtPb3YG4awqLjYV-1Cx/view
+
+
+
+https://user-images.githubusercontent.com/114364879/213551582-c6b438e6-7d83-4cf8-98d9-3e2c393ea97a.mp4
+
+
 
 
 ## License
