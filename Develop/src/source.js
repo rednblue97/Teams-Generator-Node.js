@@ -1,5 +1,6 @@
 //This will be the HTML template
 const generateHTML = (team) => {
+    //iinserts the information for the intern using text literals, same follows with manager and engineer
     const internHTML = (intern) => {
         return`
         <div class="card" style="width: 18rem;">
@@ -37,7 +38,7 @@ const generateHTML = (team) => {
         <a href="#" class="card-link">Room :${manager.getRoomNumber()}</a>
       </div>`
     }
-
+    //pushes the data so it can be used in the html template
     const html = [];
 
     html.push(
@@ -62,6 +63,7 @@ const generateHTML = (team) => {
 
     module.exports = (team) => {
         return`
+        //Generates the enitre team with basic html structure
 <html lang="en">
 <head>
   <meta charset="utf-8">
