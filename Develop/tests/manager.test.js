@@ -1,6 +1,7 @@
+//Requires the manager library
 const Manager = require("../lib/manager");
 const ieManager = new Manager("Lebron","987654","23@gmail.com","4");
-
+// Should expect the roonumber 
 it('run test for values of manager object', () => {
     expect(ieManager.name).toBe('Lebron');
     expect(ieManager.id).toBe('987654');
@@ -19,7 +20,7 @@ test('run test for id from getId() method', () => {
 test('run test for email from getEmail() method', () => {
     expect(ieManager.getEmail()).toBe('23@gmail.com');
 });
-
+//Tests for the room number and get role functions for manager
 test('run test for GitHub from getRoomNumber() method', () => {
     expect(ieManager.getRoomNumber()).toBe('4')
 });
