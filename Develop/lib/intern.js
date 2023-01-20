@@ -1,3 +1,4 @@
+//Uses the employee, adds the school and role for the intern with getSchool and getRole
 const Employee = require("../lib/employee")
 
 class Intern extends Employee {
@@ -14,5 +15,5 @@ class Intern extends Employee {
         return "Intern";
     }
 }
-
+//exports
 module.exports = Intern;
