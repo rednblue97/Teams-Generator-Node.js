@@ -1,6 +1,7 @@
+//Requires the intern library
 const Intern = require("../lib/intern");
 const ieIntern = new Intern('Luka','134679','luka@gmail.com','UoD');
-
+//Expects the school for the student
 it('run test for values of intern object', () => {
     expect(ieIntern.name).toBe('Luka');
     expect(ieIntern.id).toBe('134679');
@@ -19,7 +20,7 @@ test('run test for id from getId() method', () => {
 test('run test for email from getEmail() method', () => {
     expect(ieIntern.getEmail()).toBe('luka@gmail.com');
 });
-
+//Tests for getSchool() andf getRole() for the intern
 test('run test for school from getSchool() method', () => {
     expect(ieIntern.getSchool()).toBe('UoD')
 })
