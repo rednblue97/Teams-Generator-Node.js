@@ -1,3 +1,4 @@
+//Librarie that is the parent for name,id, and email. These functions will be used for the Engineer,Intern, and Manager
 class Employee {
     constructor(name, id, email) {
         this.name = name;
@@ -25,5 +26,5 @@ getRole() {
 }
 
 }
-
+//Exports
 module.exports = Employee
