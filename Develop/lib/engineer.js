@@ -1,3 +1,4 @@
+// Calls upon the employee library used, gets the github and role for engineer
 const Employee = require("../lib/employee");
 
 class Enigneer extends Employee {
@@ -14,5 +15,5 @@ class Enigneer extends Employee {
         return "Engineer";
     }
 }
-
+//exports
 module.exports = Enigneer; 
