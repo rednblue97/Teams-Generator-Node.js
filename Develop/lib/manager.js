@@ -1,3 +1,4 @@
+//Uses employee library and gets room number and role with functions below
 const Employee = require("../lib/employee");
 
 class Manager extends Employee {
@@ -15,5 +16,5 @@ class Manager extends Employee {
         return "Manager";
     }
 }
-
+//Exports
 module.exports = Manager;
