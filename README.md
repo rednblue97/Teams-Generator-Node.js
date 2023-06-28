@@ -41,6 +41,7 @@ The tests can be found in the tests folder, eacch test should pass. The user can
 
 
 ## GitHub 
-CaptureB
+rednblue97
 
 ## Email
+probablydavidgarcia97@gmail.com
